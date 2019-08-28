@@ -17,8 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('api/')->group(['middleware' => ['auth:api']], function() {
-    Route::get('courses/{student_id}/{term}', 'CourseController@getCoursesForStudent');
-    Route::get('tasks/{student_id}/{course_id}', 'TaskController@getTask');
-    Route::post('task/{student_id}/{course_id}', 'TaskController@createTask');
-});
+// Route::prefix('api/')->group(['middleware' => ['auth:api']], function() {
+//     Route::get('courses/{student_id}/{term}', 'CourseController@getCoursesForStudent');
+//     Route::get('tasks/{student_id}/{course_id}', 'TaskController@getTask');
+//     Route::post('task/{student_id}/{course_id}', 'TaskController@createTask');
+// });
