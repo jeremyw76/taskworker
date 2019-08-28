@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::prefix('api/')->group(['middleware' => ['auth:api']], function() {
-    Route::get('tasks/{student_id}/{course_id}');
+    Route::get('courses/{student_id}/{term}', 'CourseController@getCoursesForStudent');
+    Route::get('tasks/{student_id}/{course_id}', 'TaskController@getTask');
     Route::post('task/{student_id}/{course_id}', 'TaskController@createTask');
 });

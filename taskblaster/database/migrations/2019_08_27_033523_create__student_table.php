@@ -13,11 +13,11 @@ class CreateStudentTable extends Migration
     public function up()
     {
         \DB::statement('
-            CREATE TABLE Student (
+            CREATE TABLE student (
                 id      INT(11)     AUTO_INCREMENT       NOT NULL,
+                user_id BIGINT(20)                         NOT NULL,
                 name    VARCHAR(255)                    NOT NULL,
                 email   VARCHAR(255)                    NOT NULL,
-                password    VARCHAR(64)                 NOT NULL,
                 PRIMARY KEY (id)
             )
         ');
@@ -30,6 +30,6 @@ class CreateStudentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Student');
+        Schema::dropIfExists('student');
     }
 }
